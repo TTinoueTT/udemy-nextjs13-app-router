@@ -1,5 +1,16 @@
 {
+    "name": "rsc-supabase",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
     "dependencies": {
+        "react": "latest",
+        "react-dom": "latest",
         "@heroicons/react": "^2.1.1",
         "@supabase/auth-helpers-nextjs": "^0.9.0",
         "@supabase/supabase-js": "^2.39.8",
@@ -7,5 +18,16 @@
         "next": "^13.5.3",
         "supabase": "^1.148.6",
         "zustand": "^4.5.2"
+    },
+    "devDependencies": {
+        "typescript": "latest",
+        "@types/react": "latest",
+        "@types/node": "latest",
+        "@types/react-dom": "latest",
+        "autoprefixer": "latest",
+        "postcss": "latest",
+        "tailwindcss": "latest",
+        "eslint": "latest",
+        "eslint-config-next": "latest"
     }
 }
