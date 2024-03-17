@@ -1,4 +1,4 @@
-import RouterBtnClient from '@/app/components/client/router-btn-client';
+import RouterBtnClient from '@/components/client/router-btn-client';
 
 export default function BlogPage() {
     return (

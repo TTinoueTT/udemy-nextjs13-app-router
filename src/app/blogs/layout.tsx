@@ -1,5 +1,5 @@
-import BlogListStaticServer from '@/app/components/servers/blog-list-static-server';
-import RefreshBtnClient from '@/app/components/client/refresh-btn-client';
+import BlogListStaticServer from '@/components/servers/blog-list-static-server';
+import RefreshBtnClient from '@/components/client/refresh-btn-client';
 
 export default function BlogLayout({
     children,

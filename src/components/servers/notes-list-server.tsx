@@ -1,4 +1,4 @@
-import type { Database } from '../../../../database.types';
+import type { Database } from '../../../database.types';
 import { format } from 'date-fns';
 
 type Note = Database['public']['Tables']['notes']['Row'];

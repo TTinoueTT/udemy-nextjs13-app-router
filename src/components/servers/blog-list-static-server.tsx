@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { Database } from '../../../../database.types';
+import type { Database } from '../../../database.types';
 
 type Blog = Database['public']['Tables']['notes']['Row'];
 

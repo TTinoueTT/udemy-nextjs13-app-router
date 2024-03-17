@@ -1,9 +1,9 @@
 // import Image from 'next/image';
 import { Suspense } from 'react';
-import SpinnerServer from '@/app/components/servers/spinner-server';
-import NotesListServer from '@/app/components/servers/notes-list-server';
-import TimerCounterClient from './components/client/timer-counter-client';
-import RefreshBtnClient from '@/app/components/client/refresh-btn-client';
+import SpinnerServer from '@/components/servers/spinner-server';
+import NotesListServer from '@/components/servers/notes-list-server';
+import TimerCounterClient from '../components/client/timer-counter-client';
+import RefreshBtnClient from '@/components/client/refresh-btn-client';
 
 export default function Home() {
     return (
