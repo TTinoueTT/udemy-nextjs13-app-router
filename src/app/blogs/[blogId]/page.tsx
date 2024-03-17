@@ -30,6 +30,23 @@ async function fetchBlog(blogId: string) {
     return blogs[0];
 }
 
+/**
+ * ビルド時にDBから、ブログ情報を取得する
+ * @returns { Blog[] }
+ */
+export async function generateStaticParams() {
+    const res = await fetch(`${process.env.url}/rest/v1/blogs?select=*`, {
+        headers: new Headers({
+            apikey: process.env.apikey as string,
+        }),
+    });
+    const blogs: Blog[] = await res.json();
+
+    return blogs.map((blog) => ({
+        blogId: blog.id.toString(),
+    }));
+}
+
 export default async function BlogDetailPage({ params }: PageProps) {
     const blog = await fetchBlog(params.blogId);
     if (!blog) return notFound();
@@ -55,16 +72,3 @@ export default async function BlogDetailPage({ params }: PageProps) {
         </div>
     );
 }
-
-// export async function generateStaticParams() {
-//     const res = await fetch(`${process.env.url}/rest/v1/blogs?select=*`, {
-//         headers: new Headers({
-//             apikey: process.env.apikey as string,
-//         }),
-//     });
-//     const blogs: Blog[] = await res.json();
-
-//     return blogs.map((blog) => ({
-//         blogId: blog.id.toString(),
-//     }));
-// }
