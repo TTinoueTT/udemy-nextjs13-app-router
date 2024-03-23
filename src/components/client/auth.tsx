@@ -31,8 +31,8 @@ export default function Auth() {
             if (error) {
                 alert(error.message);
             } else {
-                // router.push('/auth/todo-crud');
-                router.push('/');
+                router.push('/auth/todo-crud');
+                // router.push('/');
             }
         } else {
             const { error } = await supabase.auth.signUp({
