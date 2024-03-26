@@ -26,12 +26,16 @@ type State = {
     loginUser: LoginUser;
     updateLoginUser: (payload: LoginUser) => void;
     resetLoginUser: () => void;
+    count: number;
+    increase: () => void;
+    decrease: () => void;
+    reset: () => void;
 };
 
 /**
  * ストアの作成を行う関数
  */
-const useStore = create<State>((set) => ({
+const useStore = create<State>((set, get) => ({
     editedTask: { id: '', title: '' },
     updateEditedTask: (payload) =>
         set({
@@ -45,5 +49,11 @@ const useStore = create<State>((set) => ({
             loginUser: payload,
         }),
     resetLoginUser: () => set({ loginUser: { id: '', email: '' } }),
+
+    count: 1,
+    increase: () => set({ count: get().count + 1 }),
+    decrease: () => set((state) => ({ count: state.count - 1 })),
+    reset: () => set({ count: 0 }),
 }));
+
 export default useStore;
